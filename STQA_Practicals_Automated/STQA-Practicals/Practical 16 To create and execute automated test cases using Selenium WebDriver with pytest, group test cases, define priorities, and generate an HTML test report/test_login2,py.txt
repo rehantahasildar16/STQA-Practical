@@ -1,0 +1,25 @@
+import pytest
+from selenium import webdriver
+
+@pytest.mark.smoke
+def test_open_website():
+
+    driver = webdriver.Chrome()
+
+    driver.get("https://demoqa.com/login")
+
+    assert "login" in driver.current_url
+
+    driver.quit()
+
+
+@pytest.mark.regression
+def test_title():
+
+    driver = webdriver.Chrome()
+
+    driver.get("https://demoqa.com/login")
+
+    assert driver.title != ""
+
+    driver.quit()

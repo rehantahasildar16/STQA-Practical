@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>File Upload and Download</title>
+
+<script>
+
+function uploadFile(){
+
+var file=document.getElementById("file").value;
+
+if(file=="")
+{
+alert("Please Select File");
+}
+else
+{
+document.getElementById("msg").innerHTML="File Uploaded Successfully";
+}
+
+}
+
+function downloadFile(){
+
+var text="This is Selenium Practical File";
+
+var blob=new Blob([text],{type:"text/plain"});
+
+var link=document.createElement("a");
+
+link.href=URL.createObjectURL(blob);
+
+link.download="sample.txt";
+
+link.click();
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<h2>File Upload and Download</h2>
+
+<input type="file" id="file">
+
+<br><br>
+
+<button onclick="uploadFile()">Upload</button>
+
+<button onclick="downloadFile()">Download</button>
+
+<br><br>
+
+<p id="msg"></p>
+
+</body>
+</html>

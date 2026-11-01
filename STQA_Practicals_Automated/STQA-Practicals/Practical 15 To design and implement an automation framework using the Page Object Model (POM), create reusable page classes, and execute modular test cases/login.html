@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login Page</title>
+
+<script>
+function login(){
+
+var u=document.getElementById("username").value;
+var p=document.getElementById("password").value;
+
+if(u=="admin" && p=="1234")
+document.getElementById("msg").innerHTML="Login Successful";
+else
+document.getElementById("msg").innerHTML="Login Failed";
+
+}
+</script>
+
+</head>
+
+<body>
+
+<h2>Student Login</h2>
+
+Username :
+<input type="text" id="username">
+
+<br><br>
+
+Password :
+<input type="password" id="password">
+
+<br><br>
+
+<button onclick="login()">Login</button>
+
+<br><br>
+
+<p id="msg"></p>
+
+</body>
+</html>

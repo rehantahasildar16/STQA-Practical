@@ -1,0 +1,79 @@
+ubmitForm() {
+
+
+            var checkboxes = document.getElementsByName("subject");
+            var count = 0;
+
+
+            for(var i=0;i<checkboxes.length;i++)
+            {
+                if(checkboxes[i].checked)
+                {
+                    count++;
+                }
+            }
+
+
+            if(count==0)
+            {
+                alert("Please select at least one checkbox.");
+            }
+            else
+            {
+                document.getElementById("msg").innerHTML =
+                "Form Submitted Successfully.<br>Total Selected : " + count;
+            }
+
+
+            return false;
+        }
+    </script>
+
+
+</head>
+
+
+<body>
+
+
+<h2>Checkbox Identification and Validation</h2>
+
+
+<form onsubmit="return submitForm();">
+
+
+<input type="checkbox" name="subject"> Python <br><br>
+
+
+<input type="checkbox" name="subject"> Java <br><br>
+
+
+<input type="checkbox" name="subject"> C++ <br><br>
+
+
+<input type="checkbox" name="subject"> DBMS <br><br>
+
+
+<input type="checkbox" name="subject"> Operating System <br><br>
+
+
+<input type="checkbox" name="subject"> CN <br><br>
+
+
+<input type="checkbox" name="subject"> Software Engineering <br><br>
+
+
+<input type="submit" value="Submit">
+
+
+</form>
+
+
+<br>
+
+
+<p id="msg" style="color:green;font-size:20px;"></p>
+
+
+</body>
+</html>
